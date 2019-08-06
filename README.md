@@ -5,12 +5,20 @@ There are several configuration steps that you will need to go through in order 
 
 NOTE: The Google account that creates the spreadsheet must be the same Google account that has GA access.
 
+Steps Overview:
 
-## Create a new Google spreadsheet. 
+1. Create a new Google spreadsheet
+2. Enable Scripts
+3. Activate APIs
+4. Add the code
+5. Add an update button
+
+
+## 1. Create a new Google spreadsheet. 
 Name it something creative like **analytics-dashboard**
 
 
-## Enable Scripts
+## 2. Enable Scripts
 Click `Tools > Script Editor`
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-1-sync-script.png "add google sheets script image")
@@ -22,7 +30,7 @@ A new tab should open up that looks like this:
 Name your project something awesome like **metrix-pullin**.
 
 
-## Activate APIs
+## 3. Activate APIs
 On your new code tab, select `Resources > Advanced Google Services`
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-3-google-services.png "google api services image")
@@ -65,7 +73,65 @@ Head back to the code tab. You should still have this popup window visible:
 Now you can click **OK**.
 
 
+## 4. Add the code
 
+Copy and paste the following code into the text area of your code tab: 
 
+```
+function gaDateFetch(){
+  // Here are all the variables you'll need to set
+  var sheetName = 'by-date';
+  var viewId = 'ga:xxxxxxx';
+  var metric = 'ga:users';
 
+  // select the sheet named by-date
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(sheetName);
+  
+  var optArgs = {
+    'start-index': '1',
+    'max-results': '1'
+  };
+  
+  // Get the values in columns A and B 
+  // which should be your start and end dates
+  var values = sheet.getRange('A2:B').getValues();
+  
+  var startDate, endDate, rowNumber,results; 
+  for (i = 0; i < values.length; i++) { 
+    startDate = Utilities.formatDate(values[i][0], 'GMT', 'yyyy-MM-dd');;
+    endDate = Utilities.formatDate(values[i][1], 'GMT', 'yyyy-MM-dd');;
+    rowNumber = Math.floor(i+2);
+    
+    // Make a request to the API.
+    results = Analytics.Data.Ga.get(
+      viewId,                    // View id (format ga:xxxxxx).
+      startDate,                  // Start-date (format yyyy-MM-dd).
+      endDate,                    // End-date (format yyyy-MM-dd).
+      metric, // Comma seperated list of metrics.
+      optArgs);
+        
+    if(results.getRows()) {
+      sheet.getRange(rowNumber, 3, results.getRows().length, 1)
+          .setValues(results.getRows());
+    }else{
+      sheet.getRange(rowNumber, 3, 1, 1)
+          .setValues([[0]]);
+    }
+  }
+}
+```
+
+_If you see a red asterisk by the filename of your code tab, it means your file isn’t saved. Save your file often._
+
+Now, in order to make this code work, you need to replace certain variables with values specific to your GA account.
+
+All of the variables you'll have to replace are located conveniently at the top of the code block:
+
+```
+  // Here are all the variables you'll need to set
+  var sheetName = 'by-date';
+  var viewId = 'ga:xxxxxxx';
+  var metric = 'ga:users';
+```
 
