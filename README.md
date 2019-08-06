@@ -60,7 +60,7 @@ Click **ENABLE**.
 
 Head back to the code tab. You should still have this popup window visible:
 
-![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-9-fetch-script.png "google api enable image")
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-4-analytics-api.png "google analytics api image")
 
 Now you can click **OK**.
 
