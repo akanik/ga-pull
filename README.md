@@ -7,6 +7,7 @@ There are several configuration steps that you will need to go through in order 
 
 NOTE: The Google account that creates the spreadsheet must be the same Google account that has GA access.
 
-1. Create a new Google spreadsheet
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+1. Create a new Google spreadsheet. Name it something creative like **analytics-dashboard**
+2. Click `Tools > Script Editor`
+![alt text](https://github.com/adam-p/markdown-here/raw/master/img/ga-pull-1-sync-script.png "google-sync-script")
+
