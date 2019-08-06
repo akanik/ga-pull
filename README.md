@@ -9,5 +9,6 @@ NOTE: The Google account that creates the spreadsheet must be the same Google ac
 
 1. Create a new Google spreadsheet. Name it something creative like **analytics-dashboard**
 2. Click `Tools > Script Editor`
-![alt text](https://github.com/adam-p/markdown-here/raw/master/img/ga-pull-1-sync-script.png "google-sync-script")
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-1-sync-script.png "google-sync-script")
 
