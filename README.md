@@ -1,16 +1,14 @@
 # ga-pull
 Steps and code for pulling Google Analytics into Google Sheets
 
-## Setup
-
 There are several configuration steps that you will need to go through in order to enable Google Sheets (GS) to pull Google Analytics (GA) code.
 
 NOTE: The Google account that creates the spreadsheet must be the same Google account that has GA access.
 
-### Create a new Google spreadsheet. 
+## Create a new Google spreadsheet. 
 Name it something creative like **analytics-dashboard**
 
-### Enable Scripts
+## Enable Scripts
 Click `Tools > Script Editor`
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-1-sync-script.png "add google sheets script image")
@@ -21,7 +19,7 @@ A new tab should open up that looks like this:
 
 Name your project something awesome like **metrix-pullin**.
 
-### Activate APIs
+## Activate APIs
 On your new code tab, select `Resources > Advanced Google Services`
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-3-google-services.png "google api services image")
