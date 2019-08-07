@@ -29,13 +29,45 @@ Find the line that says Google Analytics API and make sure that it’s toggled t
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-4-analytics-api.png "google analytics api image")
 
-**DON’T CLICK OK YET**. See that yellow box telling you to enable services in the Google Cloud Platform API Dashboard? Click _that_ link. 
+Clikc `OK`.
 
-If no such link exists, visit the [Google Cloud Platform API here](https://console.cloud.google.com).
+## 4. Create new Google Cloud project
+
+Every Google Apps Script (what you just created above) must have a Google Cloud Project connected to it. By default, when you create an Apps Script, it is assigned a default project. However, our Google Sheet can't access that default project (this is a recent change for which I have no explanation). So we need to head over to the Google Cloud Platform and create a new one that our script _can_ access.
+
+NOTE: If you have already created a Google Cloud Project for a similar script, in other words, if you've already used the code in this repository to pull analytics into a spreadsheet and you're simply trying to create another spreadsheet that pulls analytics for a different set of URLs, you can reuse the project that you used before.
+
+Navigate to the [Google Cloud Platform API here](https://console.cloud.google.com/cloud-resource-manager) and click `NEW PROJECT`.
+
+Add a name for your project.
+
+It is best to make this name descriptive to its purpose, but not so specific that you feel you cannot reuse it for similar scripts.
+
+> NOTE: If you are adding this project under an organization account, the fields for **Organization** and **Location** may be filled out for you. Take note of these because they will be helpful in finding your project later.
+
+Click `CREATE`.
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-21-cloud-name-project.png "cloud name project image")
+
+Once your project is finished processing, you should see the project dashboard screen.
 
 Make sure you have the correct project selected at the top:
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-19-google-cloud-project.png "google cloud project image")
+
+Click on `Go to project settings`.
+
+Copy the **Project number**
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-22-project-number.png "google cloud project number image")
+
+
+
+
+
+
+
+
 
 > Don’t panic if you get a screen that looks like this:
 >
