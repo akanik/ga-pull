@@ -60,11 +60,9 @@ In the search bar, search for _Analytics_.
 
 Click on the `Analytics API`. (NOTE: Not Google Analytics Reporting API)
 
-Click `ENABLE`.
+Click `ENABLE` (_If the API is already enabled, it will say `MANAGE` instead of `ENABLE`_)
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-8-enable-api.png "google api enable image")
-
-> _NOTE: if the API is already enabled, it will say `MANAGE` instead of `ENABLE`._
 
 
 Head back to the code tab. You should still have this popup window visible:
