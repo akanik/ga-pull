@@ -12,7 +12,8 @@ Steps Overview:
 3. Activate APIs
 4. Add the code
 5. Replace the variables
-6. Add an update button
+6. Add an update button (and running the damn thing)
+7. Troubleshooting
 
 
 ## 1. Create a new Google spreadsheet. 
@@ -170,7 +171,7 @@ Here’s a list of some of the common metrics you might want to use:
 
 [Explore more available metrics here](https://developers.google.com/analytics/devguides/reporting/core/dimsmets)
 
-## 6. Add an update button
+## 6. Add an update button (and running the damn thing)
 
 We’re going to add a few more lines of code here to make this thing really easy to use. Copy this code and paste it above our `gaDateFetch()` function:
 
@@ -271,7 +272,7 @@ Hopefully what you now see is Google Analytics data in column C of your spreadsh
 
 If not, see the Troubleshoots section below:
 
-## Troubleshooting
+## 7. Troubleshooting
 
 ### Wrong APIs enabled
 If you receive an error message like this it means that you enabled the wrong APIs. Follow the link provided and enable the correct API.
