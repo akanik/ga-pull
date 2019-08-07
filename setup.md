@@ -29,7 +29,13 @@ Find the line that says Google Analytics API and make sure that it’s toggled t
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-4-analytics-api.png "google analytics api image")
 
-**DON’T CLICK OK YET**. See that yellow box telling you to enable services in the Google Cloud Platform API Dashboard? Click _that_ link.
+**DON’T CLICK OK YET**. See that yellow box telling you to enable services in the Google Cloud Platform API Dashboard? Click _that_ link. 
+
+If no such link exists, visit the [Google Cloud Platform API here](https://console.cloud.google.com).
+
+Make sure you have the correct project selected at the top:
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-19-google-cloud-project.png "google cloud project image")
 
 > Don’t panic if you get a screen that looks like this:
 >
