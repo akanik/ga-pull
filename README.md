@@ -6,6 +6,6 @@ Steps and code for pulling Google Analytics into Google Sheets
   - Create a new Google spreadsheet
   - Enable Scripts
   - Activate APIs
-- Add the code
-  - [Pull sitewide data between date ranges](sitewide-by-dates.md)
+- Code
+  - [Pull sitewide data between date ranges](code/sitewide-by-dates.md)
 - [Troubleshooting](troubleshooting.md)
