@@ -2,6 +2,8 @@
 
 In order to get the code working, we need to run through a few setup steps.
 
+_IMPORTANT: The Google account that creates the spreadsheet must be the same Google account that has GA access_
+
 ## 1. Create a new Google spreadsheet. 
 Name it something creative like **analytics-dashboard**
 
