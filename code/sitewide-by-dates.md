@@ -1,5 +1,8 @@
 # Pull sitewide data between date ranges
 
+This code allows you to enter a start date and an end date and will return selected Google Analtyics metrics for your site as a whole.
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-17-date-fill.png "date analytics fill image")
 
 ## 1. Add the code
 
