@@ -5,8 +5,7 @@ There are several configuration steps that you will need to go through in order 
 
 NOTE: The Google account that creates the spreadsheet must be the same Google account that has GA access.
 
-Steps Overview:
-
+**Steps Overview:**
 1. Create a new Google spreadsheet
 2. Enable Scripts
 3. Activate APIs
