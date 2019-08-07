@@ -196,4 +196,4 @@ Hopefully what you now see is Google Analytics data in column C of your spreadsh
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-17-date-fill.png "date analytics fill image")
 
-If not, see the [Troubleshoots section](troubleshooting.md).
+If not, see the [Troubleshooting section](troubleshooting.md).
