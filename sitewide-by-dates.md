@@ -97,7 +97,7 @@ Here’s a list of some of the common metrics you might want to use:
 
 [Explore more available metrics here](https://developers.google.com/analytics/devguides/reporting/core/dimsmets)
 
-## 6. Add an update button (and running the damn thing)
+## 3. Add an update button (and running the damn thing)
 
 We’re going to add a few more lines of code here to make this thing really easy to use. Copy this code and paste it above our `gaDateFetch()` function:
 
