@@ -36,7 +36,7 @@ On your new code tab, select `Resources > Advanced Google Services`
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-3-google-services.png "google api services image")
 
-Find the line that says Google Analytics API and make sure that it’s toggled to the  **ON**  position.
+Find the line that says Google Analytics API and make sure that it’s toggled to the  `ON`  position.
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-4-analytics-api.png "google analytics api image")
 
@@ -58,20 +58,20 @@ In the search bar, search for _Analytics_.
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-7-cloud-search.png "google api cloud search image")
 
-Click on the **Analytics API**. (NOTE: Not Google Analytics Reporting API)
+Click on the `Analytics API`. (NOTE: Not Google Analytics Reporting API)
 
-Click **ENABLE**.
+Click `ENABLE`.
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-8-enable-api.png "google api enable image")
 
-> _NOTE: if the API is already enabled, it will say **MANAGE** instead of **ENABLE**._
+> _NOTE: if the API is already enabled, it will say `MANAGE` instead of `ENABLE`._
 
 
 Head back to the code tab. You should still have this popup window visible:
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-4-analytics-api.png "google analytics api image")
 
-Now you can click **OK**.
+Now you can click `OK`.
 
 
 ## 4. Add the code
@@ -150,9 +150,9 @@ All of the variables you'll have to replace are located conveniently at the top 
 
 1. Go to https://analytics.google.com
 2. Click on the Profile and View that you want to pull data from.
-3. Then select Admin > View Settings
+3. Then select `Admin > View Settings`
 4. Copy the value under View ID.
-5. Back in your code tab, replace the xxxxxxx in this variable with your View ID: `var viewId = 'ga:xxxxxxx';`
+5. Back in your code tab, replace the `xxxxxxx` in this variable with your View ID: `var viewId = 'ga:xxxxxxx';`
 
 _NOTE: Make sure you keep the ga: and the single quotes._
 
@@ -251,7 +251,7 @@ function gaDateFetch(){
 
 Return to your spreadsheet and refresh the page. You should now see an additional menu tab titled **Update data**.
 
-_NOTE: You will have to reopen the code tab by going to **Tools > Script editor**_
+_NOTE: You will have to reopen the code tab by going to `Tools > Script editor`_
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-12-gs-update.png "google sheets update image")
 
@@ -259,7 +259,7 @@ Add a few date ranges in the start_date and end_date columns
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-13-gs-dates.png "add dates to gs image")
 
-Now, click **Update data > Update data**
+Now, click `Update data > Update data`
 
 Don’t worry if you’re prompted to grant permissions to run this code. That’s normal on the first time running it:
 
