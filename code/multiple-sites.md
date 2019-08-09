@@ -12,10 +12,10 @@ This script allows you to pull page-specific analytics based on a variable start
 ```
 //Some variables for you to change
 var profiles = [
-      {'name':'Dicks Automotive','sheet':'dicks-auto','profileID':'1111111'},
-      {'name':'Highway Drive In','sheet':'hwy-drivin','profileID':'1111112'},
-      {'name':'Irwin Distributor','sheet':'irwin-dist','profileID':'1111113'},
-      {'name':'Fruit Market','sheet':'fruit-mrkt','profileID':'1111114'},
+      {'name':'Dicks Automotive','sheet':'dicks-auto','viewID':'1111111'},
+      {'name':'Highway Drive In','sheet':'hwy-drivin','viewID':'1111112'},
+      {'name':'Irwin Distributor','sheet':'irwin-dist','viewID':'1111113'},
+      {'name':'Fruit Market','sheet':'fruit-mrkt','viewID':'1111114'},
     ];
 
 var ga_end_date = '2018,12,31';
@@ -43,11 +43,11 @@ function runDataPulls() {
     var i;
     for (i = 0; i < profiles.length; i++) { 
       //rowNumber = i+2;
-      //outputToSpreadsheet(profileID, sheet, rowNumber, 6);
+      //outputToSpreadsheet(viewID, sheet, rowNumber, 6);
       
-      profileID = profiles[i]['profileID'];
+      viewID = profiles[i]['viewID'];
       sheetName = profiles[i]['sheet'];
-      fetchData(profileID, sheetName)
+      fetchData(viewID, sheetName)
     }
     
   } catch(error) {
@@ -62,12 +62,12 @@ function getLastNdays(nDaysAgo) {
   return Utilities.formatDate(before, 'GMT', 'yyyy-MM-dd');
 }
   
-function fetchData(profileID, sheetName){
+function fetchData(viewID, sheetName){
   // select the dates sheet
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(sheetName);
     
-  var tableId = 'ga:' + profileID;
+  var tableId = 'ga:' + viewID;
   
   // The code below gets the values for the range A2 thru B
   // in the active spreadsheet.  Note that this is a JavaScript array.
