@@ -2,6 +2,8 @@
 
 In order to get the code working, we need to run through a few setup steps.
 
+I estimate this setup process taking about 20 minutes or less. As long as you don't run into issues.
+
 _IMPORTANT: The Google account that creates the spreadsheet must be the same Google account that has GA access_
 
 ## 1. Create a new Google spreadsheet. 
@@ -106,3 +108,5 @@ Go back to your Google Apps Script (if the script window closed, simply go back 
 Under **Change project**, enter your copied project number and click `Set Project`.
 
 Confirm your project change when prompted.
+
+You should now be ready to start adding [code to your Google Apps Script](code/)!!
