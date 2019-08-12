@@ -18,6 +18,8 @@ Your spreadsheet can have as many columns of data as you need. For example, in a
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-29-uri-sheet-structure.png "uri spreadsheet image")
 
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-30-sheets-names.png "uri spreadsheet image")
+
 Each site that you're trying to pull analytics for needs to have a sheet with the same structure.
 
 ## Adding your code
