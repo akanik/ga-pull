@@ -235,3 +235,7 @@ Click `Update data > Update data`.
 Don’t worry if you’re prompted to grant permissions to run this code. That’s normal on the first time running it:
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-14-auth.png "sheet/script authentication image")
+
+But what you should see is your original data with all of your metrics columns added! 
+
+If this isn't what you see, refer to the [Troubleshooting section](troubleshooting.md).
