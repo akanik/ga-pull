@@ -6,7 +6,7 @@ This script allows you to pull page-specific analytics based on a variable start
 
 ## Setup
 
-First, you must create a Google spreadsheet, link it to a Google Apps Script and sync it to a Google Cloud project. All of those steps are explained in the [setup documentation[(../setup.md)
+First, you must create a Google spreadsheet, link it to a Google Apps Script and sync it to a Google Cloud project. All of those steps are explained in the [setup documentation](../setup.md)
 
 ## Constructing your spreadsheet
 
