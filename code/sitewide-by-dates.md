@@ -4,7 +4,11 @@ This code allows you to enter a start date and an end date and will return selec
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-17-date-fill.png "date analytics fill image")
 
-## 1. Add the code
+## Setup
+
+First, you must create a Google spreadsheet, link it to a Google Apps Script and sync it to a Google Cloud project. All of those steps are explained in the [setup documentation](../setup.md)
+
+## Add the code
 
 Copy and paste the following code into the text area of your code tab: 
 
