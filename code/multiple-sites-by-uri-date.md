@@ -221,3 +221,13 @@ The variables that begin with `index` help orient the script to your specific sp
 `indexStartDate` is the 0-indexed position of the column that contains the start date.
 
 `indexDataStart` is the 0-indexed position of the first column that will hold your Google Analytics data once it is returned by the script. This is usually the first empty column after all of the different story-specific information has been recorded in your spreadsheet.
+
+## Running your code
+
+Once you've changed all of the variables, return to your spreadsheet and refresh the page. You should now see an additional menu tab titled Update data.
+
+Click `Update data > Update data`.
+
+Don’t worry if you’re prompted to grant permissions to run this code. That’s normal on the first time running it:
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-14-auth.png "sheet/script authentication image")
