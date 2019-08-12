@@ -18,6 +18,18 @@ function gaDateFetch(){
   var sheetName = 'by-date';
   var viewId = 'ga:xxxxxxx';
   var metric = 'ga:users';
+  
+  //These two functions create a new menu item titled "Update data" that
+  //when clicked will run the rest of the code we're writing here
+  function onOpen() {
+    var ui = SpreadsheetApp.getUi();
+    ui.createMenu('Update data')
+        .addItem('Update data', 'updateDataMenu')
+        .addToUi();
+  }
+  function updateDataMenu() {
+    gaDateFetch();
+  }
 
   // select the sheet named by-date
   var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -104,88 +116,9 @@ Here’s a list of some of the common metrics you might want to use:
 
 [Explore more available metrics here](https://developers.google.com/analytics/devguides/reporting/core/dimsmets)
 
-## 3. Add an update button (and running the damn thing)
-
-We’re going to add a few more lines of code here to make this thing really easy to use. Copy this code and paste it above our `gaDateFetch()` function:
-
-```
-//These two functions create a new menu item titled "Update data" that
-//when clicked will run the rest of the code we're writing here
-function onOpen() {
-  var ui = SpreadsheetApp.getUi();
-  ui.createMenu('Update data')
-      .addItem('Update data', 'updateDataMenu')
-      .addToUi();
-}
-
-function updateDataMenu() {
-  gaDateFetch();
-}
-```
-
-Altogether, your code should look like this:
-
-```
-//These two functions create a new menu item titled "Update data" that
-//when clicked will run the rest of the code we're writing here
-function onOpen() {
-  var ui = SpreadsheetApp.getUi();
-  ui.createMenu('Update data')
-      .addItem('Update data', 'updateDataMenu')
-      .addToUi();
-}
-
-function updateDataMenu() {
-  gaDateFetch();
-}
-
-function gaDateFetch(){
-  // Here are all the variables you'll need to set
-  var sheetName = 'by-date';
-  var viewId = 'ga:xxxxxxx';
-  var metric = 'ga:users';
-
-  // select the sheet named by-date
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName(sheetName);
-  
-  var optArgs = {
-    'start-index': '1',
-    'max-results': '1'
-  };
-  
-  // Get the values in columns A and B 
-  // which should be your start and end dates
-  var values = sheet.getRange('A2:B').getValues();
-  
-  var startDate, endDate, rowNumber,results; 
-  for (i = 0; i < values.length; i++) { 
-    startDate = Utilities.formatDate(values[i][0], 'GMT', 'yyyy-MM-dd');;
-    endDate = Utilities.formatDate(values[i][1], 'GMT', 'yyyy-MM-dd');;
-    rowNumber = Math.floor(i+2);
-    
-    // Make a request to the API.
-    results = Analytics.Data.Ga.get(
-      viewId,                    // View id (format ga:xxxxxx).
-      startDate,                  // Start-date (format yyyy-MM-dd).
-      endDate,                    // End-date (format yyyy-MM-dd).
-      metric, // Comma seperated list of metrics.
-      optArgs);
-        
-    if(results.getRows()) {
-      sheet.getRange(rowNumber, 3, results.getRows().length, 1)
-          .setValues(results.getRows());
-    }else{
-      sheet.getRange(rowNumber, 3, 1, 1)
-          .setValues([[0]]);
-    }
-  }
-}
-```
+## 3. Run the code
 
 Return to your spreadsheet and refresh the page. You should now see an additional menu tab titled **Update data**.
-
-_NOTE: You will have to reopen the code tab by going to `Tools > Script editor`_
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-12-gs-update.png "google sheets update image")
 
