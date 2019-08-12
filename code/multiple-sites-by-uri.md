@@ -1,13 +1,26 @@
 # Gather analtyics for multiple sites at one time
 
-Sometimes, it's helpful to gather analytics for multiple sites at once. This code was developed to help the Ohio Valley ReSource, a regional journalism collaborative, collect analytics for the same story across multiple partner website.
-
-NOTE: The account that creates the spreadsheet will need to have access to each of the GA accounts it is trying to pull from.
+Sometimes, it's helpful to gather analytics for multiple sites at once. This code was developed to help the Ohio Valley ReSource, a regional journalism collaborative, collect analytics for the same story across multiple partner websites.
 
 This script allows you to pull page-specific analytics based on a variable start date. 
 
+## Setup
 
+First, you must create a Google spreadsheet, link it to a Google Apps Script and sync it to a Google Cloud project. All of those steps are explained in the [setup documentation[(../setup.md)
 
+## Constructing your spreadsheet
+
+Once you've completed the initial setup, you're going to want to configure your spreadsheet with the necessary data. For this code to work, you need to have at least two columns in your spreadsheet: a **start date** and a **URI** for the story.
+
+Your spreadsheet can have as many columns of data as you need. For example, in addition to a start date and the story URI, you might want to record the author of the piece or the subject matter.
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-29-uri-sheet-structure.png "uri spreadsheet image")
+
+Each site that you're trying to pull analytics for needs to have a sheet with the same structure.
+
+## Adding your code
+
+In the Google Apps script associated with your spreadsheet, add the following code. You can delete anything default code that appears in the new Apps script first.
 
 ```
 //Some variables for you to change
@@ -136,3 +149,45 @@ function fetchData(viewID, sheetName){
 }
 
 ```
+
+## Changing variables
+
+All of the things that you need to change in order to make this script work for your data are located at the top of the script.
+
+```
+//Some variables for you to change
+//The variables that begin with 'index' are
+//0 indexed. So if your URI is in the first column, 
+//the value of indexURI should be 0.
+var profiles = [
+  {'name':'Dicks Automotive','sheet':'dicks-auto','viewID':'1111111'},
+  {'name':'Highway Drive In','sheet':'hwy-drivin','viewID':'1111112'},
+  {'name':'Irwin Distributor','sheet':'irwin-dist','viewID':'1111113'},
+  {'name':'Fruit Market','sheet':'fruit-mrkt','viewID':'1111114'},
+];
+var endDateformat = new Date(2018,12,31);
+var metrics = ['ga:pageviews', 'ga:uniquePageviews', 'ga:avgTimeOnPage'];
+var indexURI = 2;
+var indexStartDate = 0;
+var indexDataStart = 3;
+```
+
+### profiles
+
+Profiles are the different sites that you're trying to pull data for. If you are only trying to pull data for one site, you can remove all of the objects (the lines that start and end with {...}) in the list save one.
+
+For each site that you are trying to pull data for, replace the **name**, **sheetName**, and **viewID** properties.
+
+`name` is simply a human-readable name of the site.
+
+'sheet' refers to the name of the sheet in your Google spreadsheet.
+
+`viewId` refers to the Google Analytics profile view of the site that you’re pulling data from.
+
+- Go to https://analytics.google.com
+- Click on the Profile and View that you want to pull data from.
+- Then select Admin > View Settings
+- Copy the value under View ID
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-11-ga-admin.png "google analytics admin image")
+
