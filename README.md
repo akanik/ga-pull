@@ -1,7 +1,7 @@
 # ga-pull
 Steps and code for pulling Google Analytics into Google Sheets
 
-## Table of Contents**
+## Table of Contents
 - [Setup](setup.md)
   - Create a new Google spreadsheet
   - Enable Scripts
