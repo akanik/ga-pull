@@ -12,6 +12,8 @@ First, you must create a Google spreadsheet, link it to a Google Apps Script and
 
 Once you've completed the initial setup, you're going to want to configure your spreadsheet with the necessary data. For this code to work, you need to have at least two columns in your spreadsheet: a **start date** and a **URI** for the story.
 
+Please note that the script requires a URI, not a URL. A URI is like a URI but with the domain name stripped. Keep the leading `/`.
+
 Your spreadsheet can have as many columns of data as you need. For example, in addition to a start date and the story URI, you might want to record the author of the piece or the subject matter.
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-29-uri-sheet-structure.png "uri spreadsheet image")
