@@ -74,7 +74,7 @@ All of the variables you'll have to replace are located conveniently at the top 
 
 ### sheetName
 
-`sheetName` refers to the name of the sheet in your Google spreadsheet. Create a new sheet or rename Sheet1 to by-date.
+`sheetName` refers to the name of the sheet in your Google spreadsheet. Create a new sheet or rename **Sheet1** to **by-date**.
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-10-sheet-name.png "rename google spreadsheet sheet image")
 
