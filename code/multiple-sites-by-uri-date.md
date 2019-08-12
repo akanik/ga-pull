@@ -180,7 +180,7 @@ For each site that you are trying to pull data for, replace the **name**, **shee
 
 `name` is simply a human-readable name of the site.
 
-'sheet' refers to the name of the sheet in your Google spreadsheet.
+`sheet` refers to the name of the sheet in your Google spreadsheet.
 
 `viewId` refers to the Google Analytics profile view of the site that you’re pulling data from.
 
@@ -191,3 +191,33 @@ For each site that you are trying to pull data for, replace the **name**, **shee
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-11-ga-admin.png "google analytics admin image")
 
+### endDateformat
+
+`endDateformat` end date for the analytics date range that you want to use when pulling your data.
+
+There are ways to have the end date be a variable pulled from the spreadsheet, much like the state date is. There are also ways for this date to be a variable based on the start date. For example, for each story, get two months of analytics. 
+
+This script uses a static end date.
+
+### metrics
+
+`metrics` refers to the Google Analytics metrics you want to pull in. You can have one metric or several. Seperate each metric with a comma.
+
+Here’s a list of some of the common metrics you might want to use:
+- ga:users
+- ga:newUsers
+- ga:sessions
+- ga:bounceRate
+- ga:avgSessionDuration
+
+[Explore more available metrics here](https://developers.google.com/analytics/devguides/reporting/core/dimsmets)
+
+### indexURI, indexStartDate, indexDataStart
+
+The variables that begin with `index` help orient the script to your specific spreadsheet structure. 
+
+`indexURI` is the 0-indexed position of the column that contains the URI. For example, if your story URIs are in column B of your spreadsheet, the value of `indexURI` should be 1. 
+
+`indexStartDate` is the 0-indexed position of the column that contains the start date.
+
+`indexDataStart` is the 0-indexed position of the first column that will hold your Google Analytics data once it is returned by the script. This is usually the first empty column after all of the different story-specific information has been recorded in your spreadsheet.
