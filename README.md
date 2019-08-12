@@ -8,7 +8,7 @@ Steps and code for pulling Google Analytics into Google Sheets
   - Activate APIs
 - [Code](code/)
   - [Pull sitewide data between date ranges](code/sitewide-by-dates.md)
-  - [Pull multiple sites data by URI and start date](multiple-sites-by-uri-date.md)
+  - [Pull multiple sites data by URI and start date](code/multiple-sites-by-uri-date.md)
 - [Troubleshooting](troubleshooting.md)
 
 ## Thanks / Additional Resources
