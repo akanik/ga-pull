@@ -12,9 +12,13 @@ First, you must create a Google spreadsheet, link it to a Google Apps Script and
 
 Once you've completed the initial setup, you're going to want to configure your spreadsheet with the necessary data. For this code to work, you need to have at least two columns in your spreadsheet: a **start date** and a **URI** for the story.
 
+Please note that the script requires a URI, not a URL. A URI is like a URI but with the domain name stripped. Keep the leading `/`.
+
 Your spreadsheet can have as many columns of data as you need. For example, in addition to a start date and the story URI, you might want to record the author of the piece or the subject matter.
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-29-uri-sheet-structure.png "uri spreadsheet image")
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-30-sheets-names.png "uri spreadsheet image")
 
 Each site that you're trying to pull analytics for needs to have a sheet with the same structure.
 
@@ -180,7 +184,7 @@ For each site that you are trying to pull data for, replace the **name**, **shee
 
 `name` is simply a human-readable name of the site.
 
-'sheet' refers to the name of the sheet in your Google spreadsheet.
+`sheet` refers to the name of the sheet in your Google spreadsheet.
 
 `viewId` refers to the Google Analytics profile view of the site that you’re pulling data from.
 
@@ -191,3 +195,43 @@ For each site that you are trying to pull data for, replace the **name**, **shee
 
 ![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-11-ga-admin.png "google analytics admin image")
 
+### endDateformat
+
+`endDateformat` end date for the analytics date range that you want to use when pulling your data.
+
+There are ways to have the end date be a variable pulled from the spreadsheet, much like the state date is. There are also ways for this date to be a variable based on the start date. For example, for each story, get two months of analytics. 
+
+This script uses a static end date.
+
+### metrics
+
+`metrics` refers to the Google Analytics metrics you want to pull in. You can have one metric or several. Seperate each metric with a comma.
+
+Here’s a list of some of the common metrics you might want to use:
+- ga:users
+- ga:newUsers
+- ga:sessions
+- ga:bounceRate
+- ga:avgSessionDuration
+
+[Explore more available metrics here](https://developers.google.com/analytics/devguides/reporting/core/dimsmets)
+
+### indexURI, indexStartDate, indexDataStart
+
+The variables that begin with `index` help orient the script to your specific spreadsheet structure. 
+
+`indexURI` is the 0-indexed position of the column that contains the URI. For example, if your story URIs are in column B of your spreadsheet, the value of `indexURI` should be 1. 
+
+`indexStartDate` is the 0-indexed position of the column that contains the start date.
+
+`indexDataStart` is the 0-indexed position of the first column that will hold your Google Analytics data once it is returned by the script. This is usually the first empty column after all of the different story-specific information has been recorded in your spreadsheet.
+
+## Running your code
+
+Once you've changed all of the variables, return to your spreadsheet and refresh the page. You should now see an additional menu tab titled Update data.
+
+Click `Update data > Update data`.
+
+Don’t worry if you’re prompted to grant permissions to run this code. That’s normal on the first time running it:
+
+![alt text](https://github.com/akanik/ga-pull/raw/master/img/ga-pull-14-auth.png "sheet/script authentication image")
