@@ -22,7 +22,7 @@ Your spreadsheet can have as many columns of data as you need. For example, in a
 
 Each site that you're trying to pull analytics for needs to have a sheet with the same structure.
 
-## Adding your code
+## Adding code
 
 In the Google Apps script associated with your spreadsheet, add the following code. You can delete anything default code that appears in the new Apps script first.
 
@@ -43,7 +43,6 @@ var indexURI = 2;
 var indexStartDate = 0;
 var indexDataStart = 3;
 
-
 //These two functions create a new menu item titled "Update data" that
 //when clicked will run the rest of the code we're writing here
 function onOpen() {
@@ -55,7 +54,6 @@ function onOpen() {
 function updateDataMenu() {
   runDataPulls();
 }
-
 
 function runDataPulls() {
   try {
@@ -96,7 +94,6 @@ function removeDups(names) {
 }
   
 function fetchData(viewID, sheetName){
-  // select the dates sheet
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(sheetName);
     
@@ -106,7 +103,7 @@ function fetchData(viewID, sheetName){
   
   var headerList = [];
   
-  // The code below gets the values for the range A2 thru B
+  // The code below gets the values for the range of cells that contain data 
   // in the active spreadsheet.  Note that this is a JavaScript array.
   var range = sheet.getRange(2, 1, sheet.getLastRow(), sheet.getLastColumn());
   var values = range.getValues();
@@ -226,7 +223,7 @@ The variables that begin with `index` help orient the script to your specific sp
 
 `indexDataStart` is the 0-indexed position of the first column that will hold your Google Analytics data once it is returned by the script. This is usually the first empty column after all of the different story-specific information has been recorded in your spreadsheet.
 
-## Running your code
+## Running code
 
 Once you've changed all of the variables, return to your spreadsheet and refresh the page. You should now see an additional menu tab titled Update data.
 
